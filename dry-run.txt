@@ -1,0 +1,2 @@
+This is the CI dry-run artifact.
+If you can read this, the full CI loop works end to end.
