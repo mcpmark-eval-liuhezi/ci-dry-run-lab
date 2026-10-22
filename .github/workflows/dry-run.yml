@@ -1,0 +1,23 @@
+name: Dry Run
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Greet the world
+        run: echo "Hello from the CI dry run!"
+
+      - name: Upload dry-run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dry-run-artifact
+          path: dry-run.txt
